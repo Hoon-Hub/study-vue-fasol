@@ -52,7 +52,6 @@ export default {
         date: new Date().toISOString().substring(0, 10),
       });
       this.addNewButtonActive = false;
-      console.log(this.itemList);
     },
 
     closeNewItem() {

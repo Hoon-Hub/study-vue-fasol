@@ -17,7 +17,7 @@
     <div class="w-4/5 mx-auto" v-else>
       <div v-for="(item, index) in itemList" class="w-full flex">
         <div class="w-8 h-7">{{ index++ }}</div>
-        <div class="flex-1">{{ item.title }}</div>
+        <div class="flex-1" @click="moveToDetail">{{ item.title }}</div>
         <div class="w-32 h-7">{{ item.date }}</div>
       </div>
     </div>
@@ -29,9 +29,14 @@ export default {
     return {};
   },
   props: {
-    itemList: Array,
+    itemList: {
+      type: Array,
+      default: [],
+    },
   },
-  methods: {},
+  methods: {
+    moveToDetail() {},
+  },
 };
 </script>
 <style scoped></style>
