@@ -11,6 +11,12 @@ const routes = [
     name: "Contents",
     component: () => import("../components/Contents/Main.vue"),
   },
+  {
+    path: "/ContentDetail/:item",
+    name: "ContentDetail",
+    component: () => import("../components/Contents/ContentDetail.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
