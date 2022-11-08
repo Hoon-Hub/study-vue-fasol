@@ -15,27 +15,22 @@
         }}</span>
       </div>
     </div>
-    <div class="w-full content-between">
-      <button
-        class="border rounded h-7 p-1"
-        v-if="pageCount !== 1"
-        @click="pageMove(-1)"
-      >
-        Prev
-      </button>
-      <button
-        class="border rounded h-7 p-1"
-        v-if="listCount"
-        @click="pageMove(+1)"
-      >
-        Next
-      </button>
-    </div>
+    <Button
+      class="w-full content-between"
+      :pageCount="pageCount"
+      :listCount="listCount"
+      @pageMove="pageMove"
+    />
   </div>
 </template>
 <script>
 import axios from "axios";
+import Button from "./Button.vue";
+
 export default {
+  components: {
+    Button,
+  },
   data() {
     return {
       pageCount: 1,
@@ -78,18 +73,18 @@ export default {
       }
     },
 
-    pageMove(destination) {
-      destination > 0 ? this.pageCount++ : this.pageCount--;
-      this.closeDetail();
-      this.getData();
-    },
-
     closeDetail() {
       const allItems = document.querySelectorAll(".item-detail");
       const totalLength = allItems.length;
       for (let i = 0; i < totalLength; i++) {
         document.querySelectorAll(".item-detail")[i].style.display = "none";
       }
+    },
+
+    pageMove(updatePage) {
+      this.pageCount = updatePage;
+      this.closeDetail();
+      this.getData();
     },
   },
   mounted() {
