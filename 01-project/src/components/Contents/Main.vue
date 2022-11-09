@@ -1,8 +1,6 @@
 <template lang="">
   <div class="w-full h-full text-white">
-    <router-link to="/" class="w-8 h-4 border rounded bg-gray-500 p-3"
-      >영화목록</router-link
-    >
+    <HeaderButton />
     <h1 class="w-full h-8 text-2xl mt-5 mb-5 text-center">Content List</h1>
 
     <CotentList :itemList="itemList" />
@@ -28,11 +26,13 @@
 <script>
 import CotentList from "./CotentList.vue";
 import NewItem from "./NewItem.vue";
+import HeaderButton from "../HeaderButton.vue";
 
 export default {
   components: {
     CotentList,
     NewItem,
+    HeaderButton,
   },
   data() {
     return {

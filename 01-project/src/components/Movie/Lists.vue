@@ -1,6 +1,5 @@
 <template lang="">
   <div class="w-full h-full">
-    <div class=""></div>
     <div v-for="(item, index) in movieItems" :key="index">
       <div class="w-full mb-3">
         <span class="text-xl" @click="showDetail(index)">{{
