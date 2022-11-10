@@ -22,6 +22,11 @@ const routes = [
     component: () => import("../components/Contents/ContentDetail.vue"),
     props: true,
   },
+  {
+    path: "/Reactive",
+    name: "Reactive",
+    component: () => import("../components/Reactive/Main.vue"),
+  },
 ];
 
 const router = createRouter({

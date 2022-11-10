@@ -11,6 +11,11 @@
     <router-link to="/List" class="w-8 h-4 border rounded bg-gray-500 p-3 mr-3"
       >글목록조회</router-link
     >
+    <router-link
+      to="/Reactive"
+      class="w-8 h-4 border rounded bg-gray-500 p-3 mr-3"
+      >Reactive</router-link
+    >
   </div>
 </template>
 <script>
