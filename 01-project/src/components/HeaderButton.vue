@@ -16,6 +16,9 @@
       class="w-8 h-4 border rounded bg-gray-500 p-3 mr-3"
       >Reactive</router-link
     >
+    <router-link to="/CRUD" class="w-8 h-4 border rounded bg-gray-500 p-3 mr-3"
+      >CRUD</router-link
+    >
   </div>
 </template>
 <script>

@@ -27,6 +27,11 @@ const routes = [
     name: "Reactive",
     component: () => import("../components/Reactive/Main.vue"),
   },
+  {
+    path: "/CRUD",
+    name: "CRUD",
+    component: () => import("../components/CRUD/Index.vue"),
+  },
 ];
 
 const router = createRouter({
