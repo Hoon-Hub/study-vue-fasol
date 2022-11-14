@@ -8,20 +8,30 @@ export const state = () => ({
   ],
 })
 
-export const getters = {}
+export const getters = {
+  users: (state) => state.users,
+  user: (state) => (index) => {
+    return state.users[index]
+  },
+}
 export const actions = {
-  getUsers() {
-    // commit('addUsers', users)
-    return state.users
+  updateOneUser(context, obj) {
+    context.commit('updateOneUser', obj)
+  },
+  deleteOneUser(context, obj) {
+    context.commit('deleteOneUser', obj)
   },
 }
 export const mutations = {
   addUsers(state, users) {
     state.users.push({ ...users })
   },
-  deleteItem(state, user) {
+  deleteOneUser(state, user) {
     state.users = state.users.filter((item) => {
       return item.email !== user.email
     })
+  },
+  updateOneUser(state, obj) {
+    Object.assign(state.users[obj.itemNum], obj.dataObj)
   },
 }
