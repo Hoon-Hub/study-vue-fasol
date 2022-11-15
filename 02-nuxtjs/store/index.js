@@ -14,6 +14,7 @@ export const getters = {
     return state.users[index]
   },
 }
+//Action의 역할 - 비동기 동기 구분이 필요한 로직을 mutations에서 파악하기 힘들기 때문에 action에서 async await 등을 사용하도록 한다.
 export const actions = {
   updateOneUser(context, obj) {
     context.commit('updateOneUser', obj)
